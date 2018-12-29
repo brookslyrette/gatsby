@@ -20,6 +20,9 @@ async function onCreateNode(
   }
 
   function transformObject(obj, id, type) {
+    if (typeof id !== 'string') {
+      id = id.toString()
+    }
     const jsonNode = {
       ...obj,
       id,
